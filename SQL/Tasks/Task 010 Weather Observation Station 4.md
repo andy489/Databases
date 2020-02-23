@@ -2,7 +2,7 @@
 
 [Judge System](https://www.hackerrank.com/challenges/weather-observation-station-4/problem)
 
-Let <img src="https://latex.codecogs.com/svg.latex?\Large&space;N"> be the number of CITY entries in **STATION**, and let <img src="https://latex.codecogs.com/svg.latex?\Large&space;N'"> be the number of distinct CITY names in **STATION**; query the value of <img src="https://latex.codecogs.com/svg.latex?\Large&space;N-N'"> 
+Let <img src="https://latex.codecogs.com/svg.latex?\Large&space;N"> be the number of CITY entries in **STATION**, and let <img src="https://latex.codecogs.com/svg.latex?\Large&space;N'"> be the number of distinct CITY names in **STATION**;<br>query the value of <img src="https://latex.codecogs.com/svg.latex?\Large&space;N-N'"> 
 from **STATION**. In other words, find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
 
 #### Input Format
