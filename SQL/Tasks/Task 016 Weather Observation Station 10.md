@@ -1,4 +1,4 @@
-## Weather Observation Station 9
+## Weather Observation Station 10
 
 [Judge System](https://www.hackerrank.com/challenges/weather-observation-station-10/problem)
 
