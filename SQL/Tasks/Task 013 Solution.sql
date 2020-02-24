@@ -27,3 +27,10 @@ SELECT DISTINCT CITY
 FROM STATION 
 WHERE lower(substr(CITY,length(CITY),1))
       in ('a','e','i','o','u');
+
+/*
+MS SQL Server                   
+*/
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY LIKE '%[aeiou]';
