@@ -26,6 +26,6 @@ Joe
 
 Angela has been an employee for <img src="https://latex.codecogs.com/svg.latex?\Large&space;1"> month and earns <img src="https://latex.codecogs.com/svg.latex?\Large&space;$3443"> month.<br>
 Michael has been an employee for <img src="https://latex.codecogs.com/svg.latex?\Large&space;6"> months and earns <img src="https://latex.codecogs.com/svg.latex?\Large&space;2017"> per month.<br>
-Todd has been an employee for <img src="https://latex.codecogs.com/svg.latex?\Large&space;5"> months and earns <img src="https://latex.codecogs.com/svg.latex?\Large&space;3396"> per month.
+Todd has been an employee for <img src="https://latex.codecogs.com/svg.latex?\Large&space;5"> months and earns <img src="https://latex.codecogs.com/svg.latex?\Large&space;3396"> per month.<br>
 Joe has been an employee for <img src="https://latex.codecogs.com/svg.latex?\Large&space;9"> months and earns <img src="https://latex.codecogs.com/svg.latex?\Large&space;3573"> per month.<br>
 We order our output by ascending employee_id.
