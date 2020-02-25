@@ -1,0 +1,7 @@
+/*
+MySQL & Oracle & MS SQL Server & DB2
+*/
+
+SELECT count(NAME) 
+FROM CITY
+WHERE POPULATION > 100000;
