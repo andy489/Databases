@@ -8,6 +8,6 @@ Query the greatest value of the Northern Latitudes (LAT_N) from **STATION** that
 
 The STATION table is described as follows:
 
-Station.jpg
+![](https://github.com/andy489/Database/blob/master/assets/Weather%20Observation%20Station%201.jpg)
 
 where LAT_N is the northern latitude and LONG_W is the western longitude.
