@@ -1,3 +1,7 @@
+## Weather Observation Station 18
+
+[Judge System](https://www.hackerrank.com/challenges/weather-observation-station-18/problem)
+
 Consider <img src="https://latex.codecogs.com/svg.latex?\Large&space;P_1(a,b)"> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;P_2(c,d)"> to be two points on a 2D plane.
 
 - <img src="https://latex.codecogs.com/svg.latex?\Large&space;a"> happens to equal the minimum value in Northern Latitude (LAT_N in **STATION**).
