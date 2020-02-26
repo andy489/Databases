@@ -2,7 +2,7 @@
 
 [Judge System](https://www.hackerrank.com/challenges/weather-observation-station-16/problem)
 
-Query the smallest Northern Latitude (LAT_N) from **STATION** that is greater than <img src="https://latex.codecogs.com/svg.latex?\Large&space;38.7780">. Round your answer to <img src="https://latex.codecogs.com/svg.latex?\Large&space;4"> decimal places. <img src="https://latex.codecogs.com/svg.latex?\Large&space;4"> decimal places.
+Query the smallest Northern Latitude (LAT_N) from **STATION** that is greater than <img src="https://latex.codecogs.com/svg.latex?\Large&space;38.7780">. Round your answer to <img src="https://latex.codecogs.com/svg.latex?\Large&space;4"> decimal places.
 
 #### Input Format
 
