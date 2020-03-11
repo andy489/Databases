@@ -1,4 +1,3 @@
-```sql
 GO
 if exists (select * from sysdatabases where name='pc')
 	DROP DATABASE pc
@@ -99,4 +98,3 @@ insert into printer values(3,'1434','y','Jet',290);
 insert into printer values(4,'1401','n','Matrix',150);
 insert into printer values(5,'1408','n','Matrix',270);
 insert into printer values(6,'1288','n','Laser',400);
-```
