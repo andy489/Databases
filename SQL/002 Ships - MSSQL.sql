@@ -1,4 +1,3 @@
-```sql
 GO
 if exists (select * from sysdatabases where name='ships')
 	DROP DATABASE ships
@@ -237,4 +236,3 @@ INSERT INTO OUTCOMES
 
 INSERT INTO OUTCOMES
   VALUES ('California', 'Guadalcanal', 'damaged');
-```
