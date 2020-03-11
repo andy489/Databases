@@ -1,4 +1,3 @@
-```sql
 GO
 if exists (select * from sysdatabases where name='movies')
 	DROP DATABASE movies
@@ -176,4 +175,3 @@ INSERT INTO STARSIN
 
 INSERT INTO STARSIN
   VALUES ('The Usual Suspects', 1995, 'Sandra Bullock'
-```
