@@ -1,4 +1,3 @@
-```sql
 -- MOVIES
 
 select address
@@ -70,4 +69,3 @@ where name LIKE 'R%'; -- name ~ '^R'
 select name
 from ships
 where name LIKE '% %' order by name; -- name ~ '.+ .+'
-```
