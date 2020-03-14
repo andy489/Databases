@@ -93,17 +93,10 @@ where model in (select model
 				 where color = 'y'))
 
 --6 
-select maker 
-from product 
-where model in (select model 
-		from (select * 
-		      from pc 
-		      where ram <= all(select ram from pc)) pc2 
-		where speed >= all(select speed 
-		from (select * 
-		      from pc 
-		      where ram <= all(select ram 
-				       from pc)) pc3));
+select maker
+from product p, (select ram, speed, model from pc)t
+where t.model = p.model and t.ram <=all(select ram from pc)
+and t.speed>=all(select speed from pc where t.ram = ram)
 
 --SHIPS
 --1
