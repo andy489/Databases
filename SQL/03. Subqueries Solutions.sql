@@ -138,8 +138,8 @@ where ship in (select name
 select class, name
 from ships
 where class in (select "class"
-				from classes c
-				where numguns >= all(select numguns 
-						 from classes
-						 where bore = c.bore))
+		from classes c
+		where numguns >= all(select numguns 
+				     from classes
+				     where bore = c.bore))
 order by class;
