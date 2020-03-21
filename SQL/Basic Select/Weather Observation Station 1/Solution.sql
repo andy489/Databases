@@ -1,0 +1,3 @@
+-- github.com/andy489
+
+SELECT CITY, STATE FROM STATION;
