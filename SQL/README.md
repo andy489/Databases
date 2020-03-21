@@ -34,7 +34,7 @@
 |     Aggregation     | [Population Density Difference](https://www.hackerrank.com/challenges/population-density-difference)                         |   10   | [Solution]()                 |
 |     Aggregation     | [The Blunder](https://www.hackerrank.com/challenges/the-blunder)                                                             |   15   | [Solution]()                 |
 |     Aggregation     | [Top Earners](https://www.hackerrank.com/challenges/earnings-of-employees)                                                   |   20   | [Solution]()                 |
-|     Aggregation     | [Weather Observation Station 2](https://www.hackerrank.com/challenges/weather-observation-station-2)                         |   15   | [Solution]()                 |
+|     Aggregation     | [Weather Observation Station 2](https://www.hackerrank.com/challenges/weather-observation-station-2)                         |   15   | [Solution](https://github.com/andy489/Database/blob/master/SQL/Aggregation/Weather%20Observation%20Station%202/Solution.sql)                 |
 |     Aggregation     | [Weather Observation Station 13](https://www.hackerrank.com/challenges/weather-observation-station-13)                       |   10   | [Solution]()                 |
 |     Aggregation     | [Weather Observation Station 14](https://www.hackerrank.com/challenges/weather-observation-station-14)                       |   10   | [Solution]()                 |
 |     Aggregation     | [Weather Observation Station 15](https://www.hackerrank.com/challenges/weather-observation-station-15)                       |   15   | [Solution]()                 |
