@@ -1,7 +1,4 @@
 -- github.com/andy489
 
-SELECT *
-FROM city
-WHERE 
-    countrycode = 'USA'
-    AND population > 100000;
+SELECT * FROM CITY
+WHERE COUNTRYCODE = 'USA' AND POPULATION > 100000;
