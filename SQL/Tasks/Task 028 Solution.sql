@@ -1,5 +1,0 @@
-/*
-MySQL & Oracle & MS SQL Server & DB2
-*/
-SELECT max(POPULATION)-min(POPULATION)
-FROM CITY;
