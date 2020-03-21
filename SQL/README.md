@@ -27,7 +27,7 @@
 |      Basic Join     | [Average Population of Each Continent](https://www.hackerrank.com/challenges/average-population-of-each-continent)           |   10   | [Solution](https://github.com/andy489/Database/blob/master/SQL/Basic%20Join/Average%20Population%20of%20Each%20Continent/Solution.sql)              |
 |      Basic Join     | [The Report](https://www.hackerrank.com/challenges/the-report)                                                               |   20   | [Solution]()              |
 |     Aggregation     | [Revising Aggregations - The Count Function](https://www.hackerrank.com/challenges/revising-aggregations-the-count-function) |   10   | [Solution]()              |
-|     Aggregation     | [Revising Aggregations - The Sum Function](https://www.hackerrank.com/challenges/revising-aggregations-sum)                  |   10   | [Solution]()                 |
+|     Aggregation     | [Revising Aggregations - The Sum Function](https://www.hackerrank.com/challenges/revising-aggregations-sum)                  |   10   | [Solution](https://github.com/andy489/Database/tree/master/SQL/Aggregation/Revising%20Aggregations%20-%20The%20Sum%20Function)                 |
 |     Aggregation     | [Revising Aggregations - Averages](https://www.hackerrank.com/challenges/revising-aggregations-the-average-function)         |   10   | [Solution]()                 |
 |     Aggregation     | [Average Population](https://www.hackerrank.com/challenges/average-population)                                               |   10   | [Solution]()                 |
 |     Aggregation     | [Japan Population](https://www.hackerrank.com/challenges/japan-population)                                                   |   10   | [Solution]()                 |
