@@ -1,9 +1,6 @@
 -- github.com/andy489
 
 --MS SQL Server
-/*
-MS SQL Server
-*/
 declare @test int = 3;
 declare @i int;
 declare @testP bit;
