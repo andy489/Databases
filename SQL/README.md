@@ -48,3 +48,4 @@
 | Advanced Select | [Occupations](https://www.hackerrank.com/challenges/occupations/problem) | 30 | [Solution](https://github.com/andy489/Database/blob/master/SQL/Advanced%20Select/Occupations/Solution.sql)
 | Alternative Queries | [Draw The Triangle 1](https://www.hackerrank.com/challenges/draw-the-triangle-1/problem) | 25 | [Solution](https://github.com/andy489/Database/blob/master/SQL/Alternative%20Queries/Draw%20The%20Triangle%201/Solution.sql)
 | Alternative Queries | [Draw The Triangle 2](https://www.hackerrank.com/challenges/draw-the-triangle-2/problem) | 25 | [Solution](https://github.com/andy489/Database/blob/master/SQL/Alternative%20Queries/Draw%20The%20Triangle%202/Solution.sql)
+|Alternative Queries| [Print Prime Numbers](https://www.hackerrank.com/challenges/print-prime-numbers/problem) | 40 | [Solution](https://github.com/andy489/Database/blob/master/SQL/Alternative%20Queries/Print%20Prime%20Numbers/Solution.sql)
