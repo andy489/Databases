@@ -43,5 +43,5 @@
 |     Aggregation     | [Weather Observation Station 17](https://www.hackerrank.com/challenges/weather-observation-station-17)                       |   15   | [Solution](https://github.com/andy489/Database/blob/master/SQL/Aggregation/Weather%20Observation%20Station%2017/Solution.sql)                 |
 |     Aggregation     | [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18)                       |   25   | [Solution](https://github.com/andy489/Database/blob/master/SQL/Aggregation/Weather%20Observation%20Station%2018/Solution.sql)                 |
 |     Aggregation     | [Weather Observation Station 19](https://www.hackerrank.com/challenges/weather-observation-station-19)                       |   30   | [Solution](https://github.com/andy489/Database/blob/master/SQL/Aggregation/Weather%20Observation%20Station%2019/Solution.sql)                 |
-|Aggregation | [Weather Observtion Station 20]()| 40 | [Solution]()|
+|Aggregation | [Weather Observation Station 20]()| 40 | [Solution]()|
 | Advanced Select | [Type of Triangle](https://www.hackerrank.com/challenges/what-type-of-triangle/problem) | 20 | [Solution](https://github.com/andy489/Database/blob/master/SQL/Advanced%20Select/Type%20of%20Triangle/Solution.sql)
