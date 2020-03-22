@@ -12,6 +12,3 @@ where c.company_code = lm.company_code
     and m.manager_code = e.manager_code
 group by c.company_code, c.founder
 order by c.company_code;
-
-
-
