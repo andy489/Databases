@@ -4,8 +4,8 @@
 select title, name
 from movieexec join movie on "CERT#"="PRODUCERC#"
 where "PRODUCERC#" = (select "PRODUCERC#" 
-					  from movie 
-					  where title = 'Star Wars')
+from movie 
+where title = 'Star Wars')
 order by title;
 
 --2
