@@ -1,9 +1,8 @@
 -- github.com/andy489
 
---MOVIES
-
---1
---първи начин
+-- MOVIES
+-- 1
+-- първи начин
 select starname
 from starsin
 where starname in (select name 
@@ -11,7 +10,7 @@ where starname in (select name
 	  	   where gender = 'M')
 and movietitle = 'The Usual Suspects';					
 
---втори начин
+-- втори начин
 select name
 from moviestar 
 where name in (select starname
@@ -19,14 +18,14 @@ where name in (select starname
 	       where movietitle = 'The Usual Suspects')
 and gender = 'M'
 
---трети начин
+-- трети начин
 select distinct name
 from starsin
 join moviestar on name = starname 
 where movietitle = 'The Usual Suspects'
 	  and gender = 'M';
 
---четвърти начин
+-- четвърти начин
 select name
 from moviestar
 where gender = 'M'
@@ -35,15 +34,15 @@ select starname
 from starsin
 where movietitle = 'The Usual Suspects'
 
--пети начин						  
+-- пети начин						  
 select starname 
 from starsin, moviestar
 where starsin.starname = moviestar.name 
       and moviestar.gender = 'M'
       and movietitle = 'The Usual Suspects';
 
---2
---първи начин
+-- 2
+-- първи начин
 select starname
 from starsin
 where movietitle in (select title
@@ -51,15 +50,15 @@ where movietitle in (select title
 		     where studioname = 'MGM')
 and movieyear = '1995';
 
---втори начин
+-- втори начин
 select starname
 from starsin
 join movie on movietitle = title
 where  studioname = 'MGM'
 	   and movieyear = '1995';
 
---3
---първи начин
+-- 3
+-- първи начин
 select name
 from movieexec
 where "CERT#" in (select "PRODUCERC#"
@@ -67,13 +66,13 @@ where "CERT#" in (select "PRODUCERC#"
 		  where studioname = 'MGM')
 order by name;
 
---втори начин
+-- втори начин
 select distinct name
 from movieexec
 join movie on "CERT#" = movie."PRODUCERC#" 
 where studioname = 'MGM';
 
---4
+-- 4
 select title
 from movie 
 where length > (select length
@@ -81,7 +80,7 @@ where length > (select length
 		where title = 'Star Wars')
 order by title;
 
---5
+-- 5
 select name
 from movieexec 
 where networth > (select networth
@@ -89,8 +88,8 @@ where networth > (select networth
 		  where name = 'Stephen Spielberg')
 order by networth;
 
---6
---първи начин
+-- 6
+-- първи начин
 select title 
 from movie
 where "PRODUCERC#" in 
@@ -101,7 +100,7 @@ where "PRODUCERC#" in
 				      where name = 'Stephen Spielberg'))
 order by title;
 
---втори начин
+-- втори начин
 select title
 from movie
 join movieexec on "PRODUCERC#" = movieexec."CERT#" 
@@ -110,34 +109,27 @@ where networth > (select networth
 		  where name = 'Stephen Spielberg')
 order by title;
 
---PC
-
---1
+-- PC
+-- 1
 select product.maker, laptop.speed
 from laptop inner join product on laptop.model = product.model
 where laptop.hd > 9;
 
---2
---първи подход
+-- 2
+-- първи подход
 select model, price
 from laptop 
-where model in (select model 
-				from product 
-				where maker = 'B')
+where model in (select model from product where maker = 'B')
 union 
 select model, price
 from pc 
-where model in (select model 
-				from product 
-				where maker = 'B')
+where model in (select model from product where maker = 'B')
 union 
 select model, price
 from printer
-where model in (select model 
-				from product 
-				where maker = 'B');
+where model in (select model from product where maker = 'B');
 
---втори подход
+-- втори подход
 select x.model, price
 from product x, laptop y 
 where maker ='B' and x.model = y.model
@@ -150,8 +142,8 @@ select x.model, price
 from product x, printer y
 where maker = 'B' and x.model = y.model 
 
---3
---първи начин
+-- 3
+-- първи начин
 select maker
 from product 
 where type = 'Laptop'
@@ -160,34 +152,34 @@ select maker
 from product
 where type = 'PC'
 
---втори начин
+-- втори начин
 select maker
 from product
 where type = 'Laptop' and maker not in (select maker
 					from product
 					where type = 'PC');
 
---4
---първи начин
+-- 4
+-- първи начин
 select distinct x.hd
 from pc x, pc y
 where x.hd = y.hd 
       and x.code  != y.code
 order by x.hd;
 
---втори начин
+-- втори начин
 select hd
 from pc
 group by hd having count(hd) > 1
 order by hd;
 
---5
+-- 5
 select x.model, y.model
 from pc x, pc y
 where x.hd = y.hd and x.speed = y.speed 
 	  and x.code < y.code;
 
---6
+-- 6
 select distinct maker
 from product p where model in (select model
 							   from pc 
@@ -195,9 +187,8 @@ from product p where model in (select model
 							   group by model having count(model)>1)
 order by maker;
 
---SHIPS
-
---1
+-- SHIPS
+-- 1
 select name 
 from ships
 where class in (select class 
@@ -205,7 +196,7 @@ where class in (select class
         	where displacement > 50000)
 order by name;
 
---2
+-- 2 
 select name, displacement, numguns
 from ships x
 join classes on x.class = classes.class
@@ -214,14 +205,14 @@ where x.name in (select ship
 		 where battle = 'Guadalcanal')
 order by name;
 
---3
+-- 3
 select country 
 from classes
 where type= 'bb' and country in (select country 
 				 from classes 
 				 where type = 'bc');
 
---4
+-- 4
 select out1.ship 
 from outcomes out1, outcomes out2, battles bat1, battles bat2
 where out1.ship = out2.ship and out1.result='damaged'
