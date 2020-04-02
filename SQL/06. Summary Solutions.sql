@@ -56,3 +56,18 @@ from(select title, count(starname) as count
 from movie join starsin on movietitle = title 
 group by title having count(starname)>2) t1 
 join movie on t1.title = movie.title;
+
+-- SHIPS
+-- 1
+select distinct ship
+from outcomes
+where ship like 'C%' or ship like 'K%';
+
+-- 2 
+select distinct s.name, c.country
+from classes c join ships s on c.class = s."class" 
+left join outcomes o on s.name = o.ship 
+where o.result != 'sunk' or o.result is null
+order by 1;
+
+-- 3
