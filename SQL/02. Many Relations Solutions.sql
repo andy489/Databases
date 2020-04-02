@@ -2,7 +2,7 @@
 
 -- MOVIES
 -- 1
--- първи начин
+-- first
 select starname
 from starsin
 where starname in (select name 
@@ -10,7 +10,7 @@ where starname in (select name
 	  	   where gender = 'M')
 and movietitle = 'The Usual Suspects';					
 
--- втори начин
+-- second
 select name
 from moviestar 
 where name in (select starname
@@ -18,14 +18,14 @@ where name in (select starname
 	       where movietitle = 'The Usual Suspects')
 and gender = 'M'
 
--- трети начин
+-- third
 select distinct name
 from starsin
 join moviestar on name = starname 
 where movietitle = 'The Usual Suspects'
 	  and gender = 'M';
 
--- четвърти начин
+-- forth
 select name
 from moviestar
 where gender = 'M'
@@ -34,7 +34,7 @@ select starname
 from starsin
 where movietitle = 'The Usual Suspects'
 
--- пети начин						  
+-- fifth					  
 select starname 
 from starsin, moviestar
 where starsin.starname = moviestar.name 
@@ -42,7 +42,7 @@ where starsin.starname = moviestar.name
       and movietitle = 'The Usual Suspects';
 
 -- 2
--- първи начин
+-- first
 select starname
 from starsin
 where movietitle in (select title
@@ -50,7 +50,7 @@ where movietitle in (select title
 		     where studioname = 'MGM')
 and movieyear = '1995';
 
--- втори начин
+-- second
 select starname
 from starsin
 join movie on movietitle = title
@@ -58,7 +58,7 @@ where  studioname = 'MGM'
 	   and movieyear = '1995';
 
 -- 3
--- първи начин
+-- first
 select name
 from movieexec
 where "CERT#" in (select "PRODUCERC#"
@@ -66,7 +66,7 @@ where "CERT#" in (select "PRODUCERC#"
 		  where studioname = 'MGM')
 order by name;
 
--- втори начин
+-- second
 select distinct name
 from movieexec
 join movie on "CERT#" = movie."PRODUCERC#" 
@@ -89,7 +89,7 @@ where networth > (select networth
 order by networth;
 
 -- 6
--- първи начин
+-- first
 select title 
 from movie
 where "PRODUCERC#" in 
@@ -100,7 +100,7 @@ where "PRODUCERC#" in
 				      where name = 'Stephen Spielberg'))
 order by title;
 
--- втори начин
+-- second
 select title
 from movie
 join movieexec on "PRODUCERC#" = movieexec."CERT#" 
@@ -116,7 +116,7 @@ from laptop inner join product on laptop.model = product.model
 where laptop.hd > 9;
 
 -- 2
--- първи подход
+-- first
 select model, price
 from laptop 
 where model in (select model from product where maker = 'B')
@@ -129,7 +129,7 @@ select model, price
 from printer
 where model in (select model from product where maker = 'B');
 
--- втори подход
+-- second
 select x.model, price
 from product x, laptop y 
 where maker ='B' and x.model = y.model
@@ -143,7 +143,7 @@ from product x, printer y
 where maker = 'B' and x.model = y.model 
 
 -- 3
--- първи начин
+-- first
 select maker
 from product 
 where type = 'Laptop'
@@ -152,7 +152,7 @@ select maker
 from product
 where type = 'PC'
 
--- втори начин
+-- second
 select maker
 from product
 where type = 'Laptop' and maker not in (select maker
@@ -160,14 +160,14 @@ where type = 'Laptop' and maker not in (select maker
 					where type = 'PC');
 
 -- 4
--- първи начин
+-- first
 select distinct x.hd
 from pc x, pc y
 where x.hd = y.hd 
       and x.code  != y.code
 order by x.hd;
 
--- втори начин
+-- second
 select hd
 from pc
 group by hd having count(hd) > 1
