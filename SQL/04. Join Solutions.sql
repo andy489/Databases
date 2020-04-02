@@ -41,14 +41,14 @@ left join printer on product.model = printer.model
 where laptop.code is null and pc.code is null and printer.code is null;
 
 -- 2
--- първи начин
+-- first
 select product.maker
 from product inner join laptop on laptop.model = product.model
 intersect 
 select product.maker 
 from product inner join printer on printer.model = product.model
 
--- втори начин
+-- second
 select distinct t1.maker 
 from (select maker from product inner join laptop on laptop.model = product. model)t1
 inner join (select maker from product inner join printer on printer.model = product.model)t2
