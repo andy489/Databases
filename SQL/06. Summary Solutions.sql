@@ -1,3 +1,5 @@
+-- github.com/andy489
+
 -- MOVIES
 -- 1
 select title, year, length
@@ -71,3 +73,90 @@ where o.result != 'sunk' or o.result is null
 order by 1;
 
 -- 3
+-- first
+select c.country, count(o.result)
+from classes c left join ships s on c.class = s.class
+left join outcomes o on s.name = o.ship
+where o.result = 'sunk' or o.result is null
+group by c.country
+order by 1;
+
+-- second
+select country, count(result) 
+from (select country, name, result, battle 
+from classes c left join ships s on c.class = s.class 
+left join outcomes o on o.ship = s.name 
+where o.result is null or o.result = 'sunk' or battle is null) t1 
+group by country;
+
+-- 4
+-- first
+select t.name as battle
+from (select b.name, count(b.name) as ships_count
+from battles b join outcomes o on b.name = o.battle 
+group by b.name) t
+where t.ships_count >(select count(ship)
+from outcomes o join battles b on o.battle = b.name
+where name = 'Guadalcanal')
+order by battle;
+
+-- second
+select battle 
+from outcomes 
+group by battle 
+having count(distinct ship) > (select count(distinct ship) 
+			       from outcomes 
+			       where battle = 'Guadalcanal');
+
+-- 5
+-- first
+select t.name as battle
+from (select b.name, count(b.name) as ships_count
+from battles b join outcomes o on b.name = o.battle 
+group by b.name) t
+where t.ships_count >(select count(ship)
+from outcomes o join battles b on o.battle = b.name
+where name = 'Surigao Strait')
+order by battle;
+
+-- second 
+select battle 
+from outcomes 
+group by battle 
+having count(distinct ship) > (select count(distinct ship) 
+			       from outcomes 
+			       where battle = 'Surigao Strait');
+
+-- 6
+select s.name, t.displacement, t.numguns
+from (select class, displacement, numguns
+      from classes
+      where displacement <= all(select displacement from classes)) t
+join ships s on s.class = t.class
+where t.numguns >=all(select numguns 
+		      from classes 
+		      where displacement <=all(select displacement from classes));
+
+-- 7  
+select count(distinct ship) as num_ships
+from outcomes 
+where result = 'ok' and ship in 
+(select ship from outcomes where result = 'damaged');
+								
+-- 8
+select o1.ship as ship_name
+from outcomes o1
+join battles b1 on b1.name like o1.battle
+join outcomes o2 on o2.ship like o1.ship
+join battles b2 on b2.name like o2.battle
+where b2.date > b1.date and o1.result like 'damaged' and o2.result like 'ok';
+
+select t1.ship
+from (select o.ship, b.date
+	  from outcomes o
+	  join battles b on b.name like o.battle
+	  where o.result like 'damaged') t1
+join (select o.ship, b.date
+	  from outcomes o
+	  join battles b on b.name like o.battle
+	  where o.result like 'ok') t2 on t2.ship like t1.ship and t2.date > t1.date;
