@@ -2,20 +2,20 @@
 
 -- PC
 -- 1 
--- първи начин
+-- first
 select cast(avg(speed) as decimal(10,2)) from pc;
 
--- втори начин				  
+-- second		  
 select round(avg(speed),2) from pc
 
 -- 2
--- първи стил
+-- first
 select p.maker, avg(l.screen) as AvgScreen
 from laptop l join product p on l.model=p.model
 group by p.maker
 order by p.maker;
 
---втори стил
+-- second
 select maker,avg(screen) as AvgScreen
 from laptop l join product p on l.model=p.model
 group by 1
