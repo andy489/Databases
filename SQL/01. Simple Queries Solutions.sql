@@ -78,6 +78,7 @@ where name = class;
 select name
 from ships
 where name LIKE 'R%'; -- name ~ '^R'
+
 -- 6
 select name
 from ships
