@@ -160,3 +160,43 @@ join (select o.ship, b.date
 	  from outcomes o
 	  join battles b on b.name like o.battle
 	  where o.result like 'ok') t2 on t2.ship like t1.ship and t2.date > t1.date;
+
+-- PC
+-- 1
+select model
+from laptop 
+where screen = '15' and model in (select model from laptop where screen = 11);
+					       
+-- 2
+select distinct pc.model
+from pc
+join product p on p.model = pc.model
+join (select l.price, p.maker
+	  from laptop l
+	  join product p on p.model = l.model) t on t.maker = p.maker
+group by pc.model, pc.price, t.price
+having t.price > pc.price
+order by pc.model;
+					       
+-- 3
+select t1.model, t1.price
+from (select p.maker, pc.model, avg(pc.price) as price
+	  from pc
+	  join product p on p.model = pc.model
+	  group by pc.model, p.maker) t1
+join (select p.maker, min(l.price) as price
+	  from laptop l
+	  join product p on p.model = l.model
+	  group by p.maker) t2 on t1.maker = t2.maker and t1.price < t2.price
+order by price desc;
+					       
+-- 4
+select t.code, p.maker, t.num_pc_higher_price
+from pc
+join product p on p.model = pc.model
+join (select pc1.code, count(*) as num_pc_higher_price
+	  from pc pc1
+	  cross join pc pc2
+	  where pc1.price <= pc2.price
+	  group by pc1.code) t on t.code = pc.code; 
+					       
