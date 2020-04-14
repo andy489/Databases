@@ -1,7 +1,6 @@
 -- github.com/andy489
 
 -- MOVIES
-
 -- 1
 insert into moviestar(name, birthdate) values('Nicole Kidman', 1967-20-06);
 
@@ -12,7 +11,6 @@ delete from movieexec where networth < 30000000;
 delete from moviestar where address is null;
 
 -- PC
-
 -- 4
 insert into product values('C', 1100, 'pc')
 insert into pc values(12, 1100, 2400, 2048, 500, '52x', 299);
@@ -39,7 +37,6 @@ where model in(select model from product
 			   where mker = 'B' and type = 'laptop');
 			   
 -- SHIPS
-			  
 -- 10
 insert into classes values('Nelson', 'bb', 'Gt.Britain', 9, 16, 34000);
 insert into ships values('Nelson', 'Nelson', 1927);
