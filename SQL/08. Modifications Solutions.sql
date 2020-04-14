@@ -1,6 +1,6 @@
 -- github.com/andy489
 
--- Movies
+-- MOVIES
 
 -- 1
 insert into moviestar(name, birthdate) values('Nicole Kidman', 1967-20-06);
@@ -38,7 +38,7 @@ update laptop set screen = screen + 1
 where model in(select model from product	
 			   where mker = 'B' and type = 'laptop');
 			   
--- Ships
+-- SHIPS
 			  
 -- 10
 insert into classes values('Nelson', 'bb', 'Gt.Britain', 9, 16, 34000);
