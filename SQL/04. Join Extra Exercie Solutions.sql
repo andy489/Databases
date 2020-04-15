@@ -76,7 +76,7 @@ FROM (SELECT o.ship, o.result, b.date
 	  WHERE o.result = 'damaged') data1
 JOIN (SELECT o.ship, o.result, b.date
       FROM outcomes o
-      JOIN battles b ON o.battle = b.name) data2 ON data1.ship = data2.ship AND data1.date &lt; data2.date;
+      JOIN battles b ON o.battle = b.name) data2 ON data1.ship = data2.ship AND data1.date < data2.date;
 -- subqueries
 
 SELECT *
