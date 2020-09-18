@@ -63,7 +63,8 @@ P(model, hd, screen) <- Laptop(model, s, r, hd, sceen, price) AND price > 2000
 -- Find all the tuples in the Printer relation for color printers. Remember that color is a boolean-valued attribute
 P(model, type, price) <- Printer(model, “c”, type, price)
 
--- Find the model number, speed, and hard-disk size for those PC’s that have either a 12x or 16x DVD and a price less than $2000. You may regard the rd attribute as having string type  
+-- Find the model number, speed, and hard-disk size for those PC’s that have either a 12x or 16x DVD and a price less than $2000. 
+-- You may regard the rd attribute as having string type.  
 P(model, speed, hd) <- PC(model, speed, r, hd, “12x”, price) AND price < 2000.
 P(model, speed, hd) <- PC(model, speed, r, hd, “16x”, price) AND price < 2000.
 
@@ -81,7 +82,8 @@ Q(maker) <- Product(maker, m, “Printer”)
 Answer(maker) <- P(maker) AND NOT Q(maker) // няма проблем, maker го има и в P
 
 -- Find those hard-disk sizes that occur in two or more PC’s
-P(hd) <- PC(model1, s1, r1, hd1, hr1, p1) AND PC(model2, s2, r2, hd2, hr2, p2) AND model1 <> model2 // може би ще има повторения, но на лекции казахме, че ги пренебрегваме
+P(hd) <- PC(model1, s1, r1, hd1, hr1, p1) AND PC(model2, s2, r2, hd2, hr2, p2) AND model1 <> model2 
+-- Тhere may be duplicates but we ignore them
 
 -- Find those pairs of PC models that have both the same speed and RAM. A pair should be listed only once, e.g., list (i, j) but not (j, i)
 P(model1, model2) <- PC(model1, speed, ram, hd1, hr1, p1) AND PC(model2, speed, ram, hd2, hr2, p2) AND model1 < model2
@@ -103,7 +105,7 @@ P(class, country)<-Classes (class, t, country, numGuns, b, d) AND numGuns >= 1
 P(name)<-Ships(name, c, launched) AND launched < 1918
 
 -- Find the names of ships sunk in battle and the name of the battle in which they were sunk
-P(name, sunk)<-Outcomes(name, battleName, “sunk”) AND Ship(name, class, l) AND Classes (class, t, country, n, b, d) за да знаем че корабите са от някоя страна :)
+P(name, sunk)<-Outcomes(name, battleName, “sunk”) AND Ship(name, class, l) AND Classes (class, t, country, n, b, d)
 
 -- Find all ships that have the same name as their class 
 P(name)<-Ships(name, name, l)
@@ -124,7 +126,8 @@ Q(country) <- Classes (class, “bc”, country, n, b, d) AND Ships(name, class,
 Answer(counry) <- P(country) AND Q(country)
 
 -- Find those ships that were damaged in one battle, but later fought in another
-P(name) <- Outcomes(name, battleName1, “damaged”) AND battles(battleName1, date2) AND Outcomes(name, battleName2, r) AND battles(battleName2, date2) AND date2 > date1 AND Ships(name, class, l) за да знаем дали съществува този кораб
+P(name) <- Outcomes(name, battleName1, “damaged”) AND battles(battleName1, date2) AND Outcomes(name, battleName2, r) 
+AND battles(battleName2, date2) AND date2 > date1 AND Ships(name, class, l) -- to know if this ship exists
 
 -- or
 P(name, battleDate)<- Outcomes(name, battleName, “damaged”) AND battles(battleName, battleDate)
@@ -132,9 +135,14 @@ Q(name, battleDate)<- Outcomes(name, battleName, r) AND battles(battleName, batt
 Answer(name) <- P(name, battleDate1) AND Q(name, battleDate2) AND battleDate1 < battleDate2
 
 -- Find those battles with at least three ships of the same country
-P(battle, ship1, ship2, ship3) <- Outcomes(ship1, battle, r1) AND Outcomes(ship2, battle, r2) AND Outcomes(ship3, battle, r3) AND ship1 <> ship2 AND ship1 <> ship3 AND ship2 <> ship3
-Q(battle, class1, class2, class3) <- P(battle, ship1, ship2, ship3) AND Ships(ship1, class1, l1) AND Ships(ship2, class2, l2) AND Ships(ship3, class3, l3)
-Answer(battle) <- Q(battle, class1, class2, class3) AND Classes (class1, t1, country, n1, b1, d1) AND Classes (class2, t2, country, n2, b2, d2) AND Classes (class3, t3, country, n3, b3, d3)
+P(battle, ship1, ship2, ship3) <- Outcomes(ship1, battle, r1) 
+AND Outcomes(ship2, battle, r2) AND Outcomes(ship3, battle, r3) 
+AND ship1 <> ship2 AND ship1 <> ship3 AND ship2 <> ship3
+Q(battle, class1, class2, class3) <- P(battle, ship1, ship2, ship3) 
+AND Ships(ship1, class1, l1) 
+AND Ships(ship2, class2, l2) AND Ships(ship3, class3, l3)
+Answer(battle) <- Q(battle, class1, class2, class3) AND Classes (class1, t1, country, n1, b1, d1) 
+AND Classes (class2, t2, country, n2, b2, d2) AND Classes (class3, t3, country, n3, b3, d3)
 
 -- or
 Answer(battle) <- Outcomes(ship1, battle, r1) AND Outcomes(ship2, battle, r2) 
