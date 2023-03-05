@@ -37,7 +37,7 @@ How to connect to databases:
 ### Drop DB
 
 ```sql 
-DROP DATABASE coffee_shop
+DROP DATABASE coffee_shop;
 ```
 
 Info about running processes (if some other user is using the db):
