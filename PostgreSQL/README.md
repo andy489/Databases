@@ -6,20 +6,20 @@
 
 Terminal-based front-end to PostgreSQL: `psql`
 
-`\du` - list all users
-`\! clear` - clear screan (control + L)
+- `\du` - list all users
+- `\! clear` - clear screan (control + L)
 
 ```sql
 ALTER USER andreystoev WITH PASSWORD 'password';
 ```
 `rm ~/.psql_history`
 
-`\q` - quit psql
-`help` - short help
-`\?` - long help
-`q` - exit help menu or other info in psql
-`\l` - list all current databasess
-`\x` - expanded select on/off
+- `\q` - quit psql
+- `help` - short help
+- `\?` - long help
+- `q` - exit help menu or other info in psql
+- `\l` - list all current databasess
+- `\x` - expanded select on/off
 
 ### Create DB
 
