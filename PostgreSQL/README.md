@@ -18,7 +18,7 @@ ALTER USER andreystoev WITH PASSWORD 'password';
 `help` - short help
 `\?` - long help
 `q` - exit help menu or other info in psql
-`\l` - list all current the databasess
+`\l` - list all current databasess
 `\x` - expanded select on/off
 
 ### Create DB
