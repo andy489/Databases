@@ -29,10 +29,10 @@ CREATE DATABASE coffee_shop;
 
 How to connect to databases:
 
-`psql --help` - NOT in psql terminall
-
-`psql -h localhost -p 5432 -U andreystoev coffee_shop` - NOT in psql terminal
-`\c coffee_shop` - in psql terminal
+- `psql --help` - NOT in psql terminall
+- `psql -h localhost -p 5432 -U andreystoev coffee_shop` - NOT in psql terminal
+- `\c coffee_shop` - in psql terminal
+- `pg_dump coffee_shop` - dump DDL (NOT in psql terminal)
 
 ### Drop DB
 
